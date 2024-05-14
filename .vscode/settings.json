@@ -1,0 +1,6 @@
+{
+  "git.mergeEditor": true,
+  "gitlens.advanced.fileHistoryShowMergeCommits": true,
+  "gitlens.graph.dimMergeCommits": true,
+  "merge-conflict.autoNavigateNextConflict.enabled": true
+}
