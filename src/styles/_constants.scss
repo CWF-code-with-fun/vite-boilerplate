@@ -82,10 +82,10 @@ $z-index-loading: 101;
 /**
  * Font
  */
-$fontset-normal: 'Inter', 'Zen Kaku Gothic New', sans-serif; // for Japanese text
-$fontset-english: 'Inter', sans-serif; // for english
+$fontset-normal: "Inter", "Zen Kaku Gothic New", sans-serif; // for Japanese text
+$fontset-english: "Inter", sans-serif; // for english
 $fontset-monospace: monospace; // for monospace
-$fontset-monospace-ad: 'Menlo', consolas, sans-serif; // Menlo is for Mac, Consolas is for Windows, sans-serif for Japanese Chars
+$fontset-monospace-ad: "Menlo", consolas, sans-serif; // Menlo is for Mac, Consolas is for Windows, sans-serif for Japanese Chars
 $font-regular: 400;
 $font-medium: 500;
 $font-bold: 700;
@@ -154,22 +154,22 @@ $color-button-dark: #204db1;
 $color-sns-button-light: #6a6a6a;
 $color-sns-button-dark: #1f1f1f;
 $color-button-gradation: linear-gradient(
-  90deg,
-  $color-button-light,
-  $color-button-dark,
-  $color-button-light
+    90deg,
+    $color-button-light,
+    $color-button-dark,
+    $color-button-light
 ); // background-color for button
 $color-use-button-gradation: linear-gradient(
-  90deg,
-  $color-button-light,
-  $color-button-dark
+    90deg,
+    $color-button-light,
+    $color-button-dark
 ); // background-color for button
 $color-stop-button-gradation: linear-gradient(to right, #cdcdcd 0%, #eaeaea 100%);
 $color-sns-button-gradation: linear-gradient(
-  90deg,
-  $color-sns-button-light,
-  $color-sns-button-dark,
-  $color-sns-button-light
+    90deg,
+    $color-sns-button-light,
+    $color-sns-button-dark,
+    $color-sns-button-light
 );
 $color-disabled-button: $color-secondary03;
 $color-toggle-button-gray: #e6e5e5;
@@ -243,11 +243,13 @@ $color-icon-delete-hover-dark: #000000;
 
 // header height
 :root {
-  --header-height: 64px;
-  @include pc {
-    --header-height: 50px;
-  }
+    --header-height: 64px;
+
+    @include pc {
+        --header-height: 50px;
+    }
 }
+
 $header-height-var: var(--header-height);
 
 // sidebar width

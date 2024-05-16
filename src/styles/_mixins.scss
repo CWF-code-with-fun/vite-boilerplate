@@ -1,56 +1,56 @@
-@use 'sass:math';
+@use "sass:math";
 
 /**
  * Layouts
  */
 @mixin pc() {
-  @media (min-width: $width-breakpoint + 1) {
-    @content;
-  }
+    @media (min-width: $width-breakpoint + 1) {
+        @content;
+    }
 }
 @mixin sp() {
-  @media (max-width: $width-breakpoint) {
-    @content;
-  }
+    @media (max-width: $width-breakpoint) {
+        @content;
+    }
 }
 @mixin wide-pc {
-  @media (min-width: $width-max-pc) {
-    @content;
-  }
+    @media (min-width: $width-max-pc) {
+        @content;
+    }
 }
 @mixin mid-pc {
-  @media (max-width: $width-mid-pc - 1) and (min-width: $width-breakpoint + 1) {
-    @content;
-  }
+    @media (max-width: $width-mid-pc - 1) and (min-width: $width-breakpoint + 1) {
+        @content;
+    }
 }
 @mixin min-pc {
-  @media (max-width: $width-min-pc - 1) and (min-width: $width-breakpoint + 1) {
-    @content;
-  }
+    @media (max-width: $width-min-pc - 1) and (min-width: $width-breakpoint + 1) {
+        @content;
+    }
 }
 
 @mixin rotateTableTh {
-  width: 32px;
+    width: 32px;
 
-  span {
-    @at-root .en & {
-      position: relative;
-      top: -26px;
-      display: block;
-      white-space: nowrap;
-      transform: rotate(90deg);
-      transform-origin: center;
+    span {
+        @at-root .en & {
+            position: relative;
+            top: -26px;
+            display: block;
+            white-space: nowrap;
+            transform: rotate(90deg);
+            transform-origin: center;
+        }
     }
-  }
 }
 
 @mixin rounded($variant: default) {
-  @if $variant == full {
-    border-radius: 9999999px;
-  } @else {
-    // default
-    border-radius: 8px;
-  }
+    @if $variant == full {
+        border-radius: 9999999px;
+    } @else {
+        // default
+        border-radius: 8px;
+    }
 }
 
 /**
@@ -79,88 +79,90 @@
  *
  */
 @mixin grid-collapsible() {
-  $grid-template-rows-transition: #{'grid-template-rows #{$micro-animation-duration} ease-out'};
+    $grid-template-rows-transition: #{"grid-template-rows #{$micro-animation-duration} ease-out"};
 
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: $grid-template-rows-transition, box-shadow 1ms $micro-animation-duration;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition:
+        $grid-template-rows-transition,
+        box-shadow 1ms $micro-animation-duration;
 
-  &--open {
-    grid-template-rows: 1fr;
-    transition: $grid-template-rows-transition;
-  }
+    &--open {
+        grid-template-rows: 1fr;
+        transition: $grid-template-rows-transition;
+    }
 
-  & > :where(*:first-child) {
-    overflow: hidden;
-  }
+    & > :where(*:first-child) {
+        overflow: hidden;
+    }
 }
 
 @mixin hover-applicable {
-  @media (hover: hover) and (pointer: fine) {
-    @content;
-  }
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
 }
 
 @mixin hover {
-  @include hover-applicable {
-    &:hover {
-      @content;
+    @include hover-applicable {
+        &:hover {
+            @content;
+        }
     }
-  }
 }
 
 // default line-height value is defined by developer because dashboard site doesn't have long text.
 @mixin lhCrop($line-height: math.div(24, 16)) {
-  line-height: $line-height;
+    line-height: $line-height;
 
-  &::before {
-    display: block;
-    width: 0;
-    height: 0;
-    margin-top: calc((1 - #{$line-height}) * 0.5em);
-    overflow: hidden;
-    content: '';
-  }
+    &::before {
+        display: block;
+        width: 0;
+        height: 0;
+        margin-top: calc((1 - #{$line-height}) * 0.5em);
+        overflow: hidden;
+        content: "";
+    }
 
-  &::after {
-    display: block;
-    width: 0;
-    height: 0;
-    margin-top: calc((1 - #{$line-height}) * 0.5em);
-    overflow: hidden;
-    content: '';
-  }
+    &::after {
+        display: block;
+        width: 0;
+        height: 0;
+        margin-top: calc((1 - #{$line-height}) * 0.5em);
+        overflow: hidden;
+        content: "";
+    }
 }
 
 @mixin tooltipCommonStyles() {
-  margin-bottom: 4px;
-  background-color: $color-ad-white;
-  border: 1px solid $color-border-list;
-  border-radius: 8px;
-  box-shadow: 0 4px 4px 0 rgba($color-border-value, 0.25);
+    margin-bottom: 4px;
+    background-color: $color-ad-white;
+    border: 1px solid $color-border-list;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px 0 rgba($color-border-value, 0.25);
 
-  .tippy-content {
-    padding: 12px;
-  }
-
-  .tippy-svg-arrow {
-    bottom: -19px;
-
-    svg {
-      width: 12px;
+    .tippy-content {
+        padding: 12px;
     }
-  }
+
+    .tippy-svg-arrow {
+        bottom: -19px;
+
+        svg {
+            width: 12px;
+        }
+    }
 }
 
 @mixin safariOnly() {
-  body.is-safari & {
-    @content;
-  }
+    body.is-safari & {
+        @content;
+    }
 }
 
 // Menlo font-smoothing mixin
 @mixin font-menlo() {
-  font-family: $fontset-monospace-ad;
-  -webkit-font-smoothing: $font-smoothing-safari;
-  -moz-osx-font-smoothing: $font-smoothing-firefox;
+    font-family: $fontset-monospace-ad;
+    -webkit-font-smoothing: $font-smoothing-safari;
+    -moz-osx-font-smoothing: $font-smoothing-firefox;
 }
