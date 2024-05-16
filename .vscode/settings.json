@@ -1,6 +1,16 @@
 {
-  "git.mergeEditor": true,
-  "gitlens.advanced.fileHistoryShowMergeCommits": true,
-  "gitlens.graph.dimMergeCommits": true,
-  "merge-conflict.autoNavigateNextConflict.enabled": true
+    "git.mergeEditor": true,
+    "gitlens.advanced.fileHistoryShowMergeCommits": true,
+    "gitlens.graph.dimMergeCommits": true,
+    "merge-conflict.autoNavigateNextConflict.enabled": true,
+    "prettier.documentSelectors": ["**/*.{js,jsx,ts,tsx,scss,less,json}"],
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

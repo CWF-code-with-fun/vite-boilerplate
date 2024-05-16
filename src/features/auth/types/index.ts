@@ -1,8 +1,6 @@
-interface User {
-  email: string;
-}
+import { User } from "../../users/types";
 
 export interface AuthState {
-  accessToken: string | undefined;
-  user: User | undefined;
+    accessToken: string | undefined;
+    user: User | undefined;
 }
