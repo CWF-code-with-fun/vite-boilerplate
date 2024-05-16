@@ -4,8 +4,8 @@ import viteLogo from "/vite.svg";
 import { store } from "../app/store";
 import AddTodo from "../components/AddTodo/AddTodo";
 import Todos from "../components/Todos";
-import { useDispatch } from "react-redux";
 import conf from "../conf/conf";
+import LanguageToggle from "../components/LanguageToggle";
 import { useTranslation } from "react-i18next";
 
 function App() {
@@ -19,6 +19,7 @@ function App() {
       <AddTodo />
       <Todos />
       <div>{t("learn")}</div>
+      <LanguageToggle></LanguageToggle>
     </div>
   );
 }
