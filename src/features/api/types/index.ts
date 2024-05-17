@@ -1,7 +1,7 @@
 interface AuthState {
-  accessToken?: string;
+    accessToken?: string;
 }
 
 export interface RootState {
-  auth: AuthState;
+    auth: AuthState;
 }

@@ -7,11 +7,10 @@ import "./i18n/config.ts";
 import { ErrorBoundary } from "react-error-boundary";
 import { Error } from "./pages/Error/index.tsx";
 
-
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <Provider store={store}>
-   <ErrorBoundary FallbackComponent={Error}>
-   <App />
-   </ErrorBoundary>
-  </Provider>,
+    <Provider store={store}>
+        <ErrorBoundary FallbackComponent={Error}>
+            <App />
+        </ErrorBoundary>
+    </Provider>,
 );

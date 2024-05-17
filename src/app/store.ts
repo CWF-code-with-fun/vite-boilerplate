@@ -5,19 +5,19 @@ import userSliceReducer from "@/features/users/userSlice";
 import languageSliceReducer from "@/features/language/languageSlice";
 
 const rootReducer = combineReducers({
-  [apiSlice.reducerPath]: apiSlice.reducer,
-  auth: authSliceReducer,
-  user: userSliceReducer,
-  language: languageSliceReducer,
+    [apiSlice.reducerPath]: apiSlice.reducer,
+    auth: authSliceReducer,
+    user: userSliceReducer,
+    language: languageSliceReducer,
 });
 
 export const store = configureStore({
-  reducer: rootReducer,
-  middleware: getDefaultMiddleware =>
-    getDefaultMiddleware({
-      thunk: true,
-      serializableCheck: false,
-    }).concat(apiSlice.middleware),
+    reducer: rootReducer,
+    middleware: getDefaultMiddleware =>
+        getDefaultMiddleware({
+            thunk: true,
+            serializableCheck: false,
+        }).concat(apiSlice.middleware),
 });
 
 export type RootState = ReturnType<typeof rootReducer>;
