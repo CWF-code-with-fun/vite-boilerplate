@@ -17,8 +17,8 @@ function App() {
             <AddTodo />
             <Todos />
             <div>{t("learn")}</div>
-          <LanguageToggle></LanguageToggle>
-    </div>
+            <LanguageToggle></LanguageToggle>
+        </div>
     );
 }
 
