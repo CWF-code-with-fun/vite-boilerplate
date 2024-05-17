@@ -71,7 +71,7 @@ module.exports = defineConfig({
         "linebreak-style": 0,
         "no-loops/no-loops": 1,
         "prettier/prettier": ["error", {}, { properties: { usePrettierrc: true } }],
-        quotes: ["error", "single"],
+        quotes: ["error", "double"],
         "react-hooks/rules-of-hooks": "error",
         "react-refresh/only-export-components": 0,
         "react/react-in-jsx-scope": 0,
