@@ -1,3 +1,3 @@
 export interface LanguageState {
-  language: string;
+    language: string;
 }

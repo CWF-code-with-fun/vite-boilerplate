@@ -3,9 +3,9 @@ import { apiSlice } from "../api/apiSlice";
 import { userLoggedIn } from "./authSlice";
 
 export const authApi = apiSlice.injectEndpoints({
-    endpoints: (builder) => ({
+    endpoints: builder => ({
         register: builder.mutation({
-            query: (data) => ({
+            query: data => ({
                 url: ENDPOINT_URL.AUTH_REGISTER,
                 method: "POST",
                 body: data,
@@ -17,7 +17,7 @@ export const authApi = apiSlice.injectEndpoints({
                         userLoggedIn({
                             accessToken: result.data.accessToken,
                             user: result.data.user,
-                        })
+                        }),
                     );
                 } catch (err) {
                     // do nothing
@@ -25,7 +25,7 @@ export const authApi = apiSlice.injectEndpoints({
             },
         }),
         login: builder.mutation({
-            query: (data) => ({
+            query: data => ({
                 url: ENDPOINT_URL.AUTH_LOGIN,
                 method: "POST",
                 body: data,
@@ -38,7 +38,7 @@ export const authApi = apiSlice.injectEndpoints({
                         userLoggedIn({
                             accessToken: result.data.accessToken,
                             user: result.data.user,
-                        })
+                        }),
                     );
                 } catch (err) {
                     // do nothing

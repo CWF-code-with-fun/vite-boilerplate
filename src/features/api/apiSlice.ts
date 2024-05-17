@@ -1,38 +1,31 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import type {
-  BaseQueryFn,
-  FetchArgs,
-  FetchBaseQueryError,
-} from '@reduxjs/toolkit/query/react';
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import type { BaseQueryFn, FetchArgs, FetchBaseQueryError } from "@reduxjs/toolkit/query/react";
 import { userLoggedOut } from "@/features/auth/authSlice";
-import { SLICE_NAME } from '../sliceNameConst';
-import { RootState } from './types';
+import { SLICE_NAME } from "../sliceNameConst";
+import { RootState } from "./types";
 
+const baseQuery: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = fetchBaseQuery({
+    baseUrl: "http://localhost:5000", // API URL
+    prepareHeaders: async (headers, { getState }) => {
+        const token = (getState() as RootState)?.auth?.accessToken;
+        if (token) {
+            headers.set("Authorization", `Bearer ${token}`);
+        }
 
-const baseQuery: BaseQueryFn<string | FetchArgs,
-unknown,
-FetchBaseQueryError> = fetchBaseQuery({
-  baseUrl: "http://localhost:5000", // API URL
-  prepareHeaders: async (headers, { getState }) => {
-    const token = (getState() as RootState)?.auth?.accessToken;
-    if (token) {
-      headers.set("Authorization", `Bearer ${token}`);
-    }
-
-    return headers;
-  },
+        return headers;
+    },
 });
 
 export const apiSlice = createApi({
-  reducerPath: SLICE_NAME.REDUCER_PATH,
-  baseQuery: async (args, api, extraOptions) => {
-    const result = await baseQuery(args, api, extraOptions);
+    reducerPath: SLICE_NAME.REDUCER_PATH,
+    baseQuery: async (args, api, extraOptions) => {
+        const result = await baseQuery(args, api, extraOptions);
 
-    if (result?.error && result.error?.status === 401) {
-      api.dispatch(userLoggedOut());
-    }
-    return result;
-  },
-  tagTypes: [],
-  endpoints: () => ({}),
+        if (result?.error && result.error?.status === 401) {
+            api.dispatch(userLoggedOut());
+        }
+        return result;
+    },
+    tagTypes: [],
+    endpoints: () => ({}),
 });
