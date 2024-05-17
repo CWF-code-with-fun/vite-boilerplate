@@ -90,7 +90,7 @@ module.exports = defineConfig({
             },
             typescript: {
                 alwaysTryTypes: true,
-                project: ["tsconfig.json"],
+                project: ["./tsconfig.json"],
             },
         },
         react: {
