@@ -1,6 +1,7 @@
 import React from "react";
 import { addTodo } from "../../features/todo/todoSlice";
 import { useDispatch } from "react-redux";
+
 const AddTodo = () => {
     const dispatch = useDispatch();
     const handleClick = () => {
