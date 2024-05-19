@@ -1,13 +1,15 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { LanguageState } from "./types";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
+import type { LanguageState } from "./types";
 
 const initialState: LanguageState = {
     language: localStorage.getItem("i18nextLng") || "en",
 };
 
 const languageSlice = createSlice({
-    name: "language",
     initialState,
+    name: "language",
     reducers: {
         setLanguage: (state, action: PayloadAction<string>) => {
             console.log(action.payload);

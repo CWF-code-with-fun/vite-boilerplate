@@ -1,5 +1,5 @@
 export const SLICE_NAME = {
-    REDUCER_PATH: "api",
     AUTH: "auth",
+    REDUCER_PATH: "api",
     USER: "user",
 };

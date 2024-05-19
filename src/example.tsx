@@ -2,8 +2,9 @@
 // import from packages
 import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
 
-// import from local files
 import AddTodo from "@components/AddTodo/AddTodo";
+
+// import from local files
 
 // use interface for props, use type for advanced unions, intersections, tuples, and generics
 // declaration merging is allowed
@@ -33,12 +34,8 @@ export default function Component({ a, b, c }: React.PropsWithChildren<Component
     // const {p, q, setR} = useMyCustomHook();
     const [z, setZ] = useState(3);
     const divReference = useRef<HTMLDivElement>(null);
-    const complexCalculation = useMemo(() => {
-        return a + b + c;
-    }, [a, b, c]);
-    const complexCalcutaionFunction = useCallback(() => {
-        return a + b + c;
-    }, [a, b, c]);
+    const complexCalculation = useMemo(() => a + b + c, [a, b, c]);
+    const complexCalcutaionFunction = useCallback(() => a + b + c, [a, b, c]);
 
     // then declare functions
     // uses of arrow function is not allowed

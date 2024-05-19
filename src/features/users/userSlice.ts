@@ -1,20 +1,23 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
 import { SLICE_NAME } from "../sliceNameConst";
-import { User } from "./types";
+
+import type { User } from "./types";
 
 const initialState: Partial<User> = {
     email: "",
 };
 
 const userSlice = createSlice({
-    name: SLICE_NAME.USER,
     initialState,
+    name: SLICE_NAME.USER,
     reducers: {
         getUserEmail: (state, action: PayloadAction<{ email: string }>) => {
             const { email } = action.payload;
             return {
                 ...state,
-                email: email,
+                email,
             };
         },
     },

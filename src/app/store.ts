@@ -1,23 +1,24 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
+
 import { apiSlice } from "@/features/api/apiSlice";
 import authSliceReducer from "@/features/auth/authSlice";
-import userSliceReducer from "@/features/users/userSlice";
 import languageSliceReducer from "@/features/language/languageSlice";
+import userSliceReducer from "@/features/users/userSlice";
 
 const rootReducer = combineReducers({
     [apiSlice.reducerPath]: apiSlice.reducer,
     auth: authSliceReducer,
-    user: userSliceReducer,
     language: languageSliceReducer,
+    user: userSliceReducer,
 });
 
 export const store = configureStore({
-    reducer: rootReducer,
     middleware: getDefaultMiddleware =>
         getDefaultMiddleware({
-            thunk: true,
             serializableCheck: false,
+            thunk: true,
         }).concat(apiSlice.middleware),
+    reducer: rootReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

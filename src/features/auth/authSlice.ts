@@ -1,6 +1,9 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import type { PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
+
 import { SLICE_NAME } from "../sliceNameConst";
-import { AuthState } from "./types";
+
+import type { AuthState } from "./types";
 
 const initialState: AuthState = {
     accessToken: undefined,
@@ -8,8 +11,8 @@ const initialState: AuthState = {
 };
 
 const authSlice = createSlice({
-    name: SLICE_NAME.AUTH,
     initialState,
+    name: SLICE_NAME.AUTH,
     reducers: {
         userLoggedIn: (state, action: PayloadAction<AuthState>) => {
             state.accessToken = action.payload.accessToken;

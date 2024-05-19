@@ -1,19 +1,24 @@
 import React from "react";
-import { addTodo } from "../../features/todo/todoSlice";
 import { useDispatch } from "react-redux";
 
-const AddTodo = () => {
+import { addTodo } from "../../features/todo/todoSlice";
+
+type AddTodoProps = {
+    children: React.ReactNode;
+};
+function AddTodo({ children }: AddTodoProps) {
     const dispatch = useDispatch();
     const handleClick = () => {
         dispatch(addTodo("drink water"));
     };
     return (
         <div>
-            <button className="button" onClick={handleClick}>
+            <button type="button" className="button" onClick={handleClick}>
                 add Todo
             </button>
+            {children}
         </div>
     );
-};
+}
 
 export default AddTodo;
