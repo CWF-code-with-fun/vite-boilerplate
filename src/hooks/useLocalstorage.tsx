@@ -6,10 +6,9 @@ export const useLocalStorage = <T,>(keyName: string, defaultValue: T): [T, (newV
             const value = window.localStorage.getItem(keyName);
             if (value) {
                 return JSON.parse(value) as T;
-            } else {
-                window.localStorage.setItem(keyName, JSON.stringify(defaultValue));
-                return defaultValue;
             }
+            window.localStorage.setItem(keyName, JSON.stringify(defaultValue));
+            return defaultValue;
         } catch (err) {
             return defaultValue;
         }

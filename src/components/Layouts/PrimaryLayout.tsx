@@ -1,7 +1,7 @@
 import React from "react";
 
-const PrimaryLayout = () => {
-    return <main></main>;
-};
+function PrimaryLayout() {
+    return <main />;
+}
 
 export default PrimaryLayout;
