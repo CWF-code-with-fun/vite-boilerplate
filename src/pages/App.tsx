@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import AddTodo from "../components/AddTodo/AddTodo";
 import LanguageToggle from "../components/LanguageToggle";
 import Todos from "../components/Todos";
+import { RootPath } from "./routes";
 
 function App() {
     const { t } = useTranslation();
@@ -12,6 +13,7 @@ function App() {
             <Todos />
             <div>{t("learn")}</div>
             <LanguageToggle />
+            <RootPath />
         </div>
     );
 }
