@@ -9,7 +9,7 @@ import type { RootState } from "./types";
 
 const baseQuery: BaseQueryFn<string | FetchArgs, unknown, FetchBaseQueryError> = fetchBaseQuery({
     baseUrl: "http://localhost:5000", // API URL
-    prepareHeaders: async (headers, { getState }) => {
+    prepareHeaders: (headers, { getState }) => {
         const token = (getState() as RootState)?.auth?.accessToken;
         if (token) {
             headers.set("Authorization", `Bearer ${token}`);

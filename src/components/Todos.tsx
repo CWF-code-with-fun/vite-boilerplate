@@ -1,5 +1,5 @@
-import { RootState } from "@/app/store";
-import { Todo } from "@/features/todo/types";
+import { type RootState } from "@/app/store";
+import { type Todo } from "@/features/todo/types";
 import { useSelector } from "react-redux";
 
 function Todos() {
