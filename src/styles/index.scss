@@ -12,3 +12,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    @font-face {
+        font-family: Bijoy;
+        src: url(/assets/fonts/NotoSerifBengali.ttf) format("truetype");
+    }
+
+    @font-face {
+        font-family: Roboto;
+        src: url(/assets/fonts/Roboto.ttf) format("truetype");
+    }
+}
+
+*[lang="en"] {
+    @apply font-['Roboto'];
+}
+
+*[lang="bn"] {
+    @apply font-['Bijoy'];
+}
