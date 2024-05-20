@@ -1,12 +1,16 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-
-import { addTodo, updateTodo, toggleTodo, removeTodo } from "./features/todo/todoSlice";
+import { type RootState } from "@/app/store";
+import { type Todo } from "@/features/todo/types";
+import { useSelector } from "react-redux";
 
 function Todos() {
-    const todos = useSelector((state: any) => state.todos);
-    console.log("todos__ss", todos);
-    return <div>Todos</div>;
+    const todos = useSelector<RootState, Todo[]>(state => state.todos.all);
+    return (
+        <ul>
+            {todos.map(todo => (
+                <li key={todo.id}>{todo.text}</li>
+            ))}
+        </ul>
+    );
 }
 
 export default Todos;

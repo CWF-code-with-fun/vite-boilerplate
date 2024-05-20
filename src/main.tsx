@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import { ErrorBoundary } from "react-error-boundary";
 import { Provider } from "react-redux";
-import { BrowserRouter, useLocation } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import "./styles/index.scss";
 import { store } from "./app/store";

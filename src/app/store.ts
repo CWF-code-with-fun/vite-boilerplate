@@ -4,12 +4,15 @@ import { apiSlice } from "@/features/api/apiSlice";
 import authSliceReducer from "@/features/auth/authSlice";
 import languageSliceReducer from "@/features/language/languageSlice";
 import userSliceReducer from "@/features/users/userSlice";
+import todosSliceReducer from "@/features/todo/todoSlice";
 
 const rootReducer = combineReducers({
     [apiSlice.reducerPath]: apiSlice.reducer,
     auth: authSliceReducer,
     language: languageSliceReducer,
+    todos: todosSliceReducer,
     user: userSliceReducer,
+    todos: todosSliceReducer,
 });
 
 export const store = configureStore({

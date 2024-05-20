@@ -1,12 +1,13 @@
+import { Helmet } from "react-helmet";
 import useLocalization from "@/hooks/useLocalization";
-import AddTodo from "../components/AddTodo/AddTodo";
-import Todos from "../components/Todos";
 
 import { RootPath } from "./routes";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/app/store";
 import { useEffect } from "react";
 import { setLanguage } from "@/features/language/languageSlice";
+import AddTodo from "@/components/AddTodo/AddTodo";
+import Todos from "@/components/Todos";
 
 function App() {
     const { t, i18n } = useLocalization();
@@ -25,9 +26,7 @@ function App() {
     }, [language, dispatch]);
 
     useEffect(() => {
-        console.log("inside 2");
         i18n.changeLanguage(language);
-        // LocalizationService.changeLanguage(language);
     }, [language, i18n]);
 
     function updateLanguage(lang: string) {
@@ -38,7 +37,9 @@ function App() {
         const params = new URLSearchParams(window.location.search);
         params.set("lng", newLanguage);
         window.history.pushState({}, "", `${window.location.pathname}?${params.toString()}`);
+        document.documentElement.setAttribute("lang", lang);
     }
+
     function switchToBanglaHandler() {
         if (language === "en") {
             updateLanguage("bn");
@@ -52,7 +53,11 @@ function App() {
     }
     return (
         <div className="container">
-            <AddTodo>children</AddTodo>
+            <Helmet>
+                <title>sample Title</title>
+                <meta name="description" content="sample component" />
+            </Helmet>
+            <AddTodo>Add Todo</AddTodo>
             <Todos />
             <div>{t("learn")}</div>
             <button onClick={switchToBanglaHandler}>Switch to Bangla</button>
