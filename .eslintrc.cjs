@@ -2,7 +2,6 @@
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable import/no-extraneous-dependencies */
-const { resolve } = require("path");
 
 // @ts-check
 const { defineConfig } = require("eslint-define-config");
@@ -10,7 +9,7 @@ const { defineConfig } = require("eslint-define-config");
 module.exports = defineConfig({
     env: { browser: true, es2020: true },
     extends: [
-        "airbnb",
+        // "airbnb",
         "airbnb-typescript",
         "airbnb/hooks",
         "plugin:@typescript-eslint/recommended",
@@ -44,13 +43,7 @@ module.exports = defineConfig({
         },
     ],
     parser: "@typescript-eslint/parser",
-    parserOptions: {
-        ecmaVersion: "latest",
-        // project: true,
-        sourceType: "module",
-        project: resolve(__dirname, "./tsconfig.json"),
-        createDefaultProgram: true,
-    },
+    parserOptions: { ecmaVersion: "latest", project: true, sourceType: "module" },
     plugins: [
         "react",
         "react-refresh",
@@ -61,6 +54,7 @@ module.exports = defineConfig({
         "import",
         "prettier",
         "sort-keys-fix",
+        "unused-imports",
     ],
     rules: {
         "@typescript-eslint/consistent-type-imports": "warn",
@@ -86,107 +80,15 @@ module.exports = defineConfig({
         semi: 1,
         "sort-keys-fix/sort-keys-fix": "error",
         "tailwindcss/no-custom-classname": 0,
-        "react/jsx-uses-react": "off",
-        indent: "off",
-        eqeqeq: "error",
-        "object-shorthand": "error",
-        // overrides recommends
-        "no-use-before-define": "off",
-        "no-extra-boolean-cast": "off",
-        "no-magic-numbers": "off",
-        "no-undef": "off",
-        "react/prop-types": "off",
-        "react/display-name": "off",
-        "@typescript-eslint/no-empty-interface": "off",
-        "@typescript-eslint/no-explicit-any": "off",
-        "@typescript-eslint/no-var-requires": "warn",
-        "@typescript-eslint/ban-ts-comment": ["error", { "ts-ignore": "allow-with-description" }],
-        // our additional rules
-        "no-unneeded-ternary": "error",
-        "react/jsx-boolean-value": "error",
-        "react/jsx-closing-bracket-location": "error",
-        "react/jsx-closing-tag-location": "error",
-        "react/jsx-curly-spacing": "error",
-        "react/jsx-no-bind": [
-            "error",
+        "no-unused-vars": "error",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
             {
-                ignoreRefs: true,
-                allowArrowFunctions: true,
-                allowBind: false,
-            },
-        ],
-        "react/jsx-pascal-case": "error",
-        "react/jsx-tag-spacing": "error",
-        "react/jsx-wrap-multilines": "error",
-        "react/jsx-handler-names": [
-            "error",
-            {
-                eventHandlerPrefix: "handle",
-            },
-        ],
-        "react/no-array-index-key": "off",
-        "react/self-closing-comp": "error",
-        "react/sort-comp": [
-            "error",
-            {
-                order: [
-                    "static-methods",
-                    "instance-variables",
-                    "lifecycle",
-                    "render",
-                    "/^render.+$/",
-                    "/^on.+$/",
-                    "everything-else",
-                ],
-            },
-        ],
-        "react/jsx-no-target-blank": "error",
-        "react/boolean-prop-naming": [
-            "error",
-            {
-                propTypeNames: ["bool", "boolean"],
-                validateNested: true,
-            },
-        ],
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/explicit-member-accessibility": "off",
-        "@typescript-eslint/indent": "off",
-        "@typescript-eslint/prefer-includes": "error",
-        "@typescript-eslint/array-type": "error",
-        "@typescript-eslint/naming-convention": [
-            "error",
-            {
-                selector: "variable",
-                format: ["UPPER_CASE"],
-                modifiers: ["global", "const"],
-                types: ["number"],
-            },
-            {
-                selector: "variable",
-                format: ["PascalCase"],
-                modifiers: ["const"],
-                types: ["boolean"],
-                prefix: ["is", "has", "can"],
-            },
-            {
-                selector: ["typeAlias", "interface"],
-                format: ["PascalCase"],
-                custom: {
-                    match: false,
-                    regex: "([A-Z][a-z]+)+Type$",
-                },
-            },
-        ],
-        // "eslint-comments/no-unlimited-disable": "error",
-        "import/order": [
-            "error",
-            {
-                groups: ["builtin", "external", "internal", "parent", "sibling", "index"],
-                "newlines-between": "always",
-                alphabetize: {
-                    order: "asc",
-                    caseInsensitive: true,
-                },
+                vars: "all",
+                varsIgnorePattern: "^_",
+                args: "after-used",
+                argsIgnorePattern: "^_",
             },
         ],
     },
@@ -218,4 +120,5 @@ module.exports = defineConfig({
             whitelist: [], // can be modified to support custom attributes. E.g. "^tw$" for `twin.macro`
         },
     },
+    ignorePatterns: ["vite.config.ts", "example.tsx"],
 });
