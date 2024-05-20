@@ -10,7 +10,7 @@ import App from "./pages/App";
 import Error from "./pages/Error/index";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-    <BrowserRouter basename="app">
+    <BrowserRouter>
         <Provider store={store}>
             <ErrorBoundary FallbackComponent={Error}>
                 <App />
