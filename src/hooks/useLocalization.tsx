@@ -6,7 +6,7 @@ function useLocalization() {
 
     // You can add custom functionalities or modifications here if needed
 
-    return { t, i18n };
+    return { i18n, t };
 }
 
 export default useLocalization;

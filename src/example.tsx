@@ -34,7 +34,7 @@ export default function Component({ a, b, c }: React.PropsWithChildren<Component
     // const {p, q, setR} = useMyCustomHook();
     const [z, setZ] = useState(3);
     const divReference = useRef<HTMLDivElement>(null);
-    const complexCalculation = useMemo(() => a + b + c, [a, b, c]);
+    const complexCalculation = useMemo(() => x + y + z + a + b + c, [a, b, c]);
     const complexCalcutaionFunction = useCallback(() => a + b + c, [a, b, c]);
 
     // then declare functions
@@ -42,7 +42,7 @@ export default function Component({ a, b, c }: React.PropsWithChildren<Component
     function add(a: number, b: number) {
         return a + b;
     }
-
+    add(1, 2);
     // then use useEffect, useLayoutEffect, useTransition
     // REMEMBER: useEffect will be used when it is really necessary
     // useLayoutEffect will be used when it is necessary to wait for the DOM to be updated

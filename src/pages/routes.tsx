@@ -6,8 +6,8 @@ import { userLoggedIn } from "@/features/auth/authSlice";
 
 import { ROUTES } from "../consts/routes";
 
-const Home = lazy(() => import("./home"));
-const PageLogin = lazy(() => import("./login"));
+const Home = lazy(() => import("@/pages/home"));
+const PageLogin = lazy(() => import("@/pages/login"));
 
 function PublicLayout() {
     return <Outlet />;
@@ -25,7 +25,7 @@ function PrivateLayout() {
 function PublicOnlyLayout() {
     const loggedIn = useSelector(userLoggedIn);
     const location = useLocation();
-    if (loggedIn) {
+    if (!loggedIn) {
         return <Navigate to={ROUTES.ROOT} state={{ from: location }} />;
     }
     return <Outlet />;
@@ -42,12 +42,12 @@ export function RootPath() {
 
                 {/* public only routes */}
                 <Route element={<PublicOnlyLayout />}>
-                    <Route path="/login" element={<PageLogin>Login Page</PageLogin>} />
+                    <Route path={ROUTES.LOGIN} element={<PageLogin>Login Page</PageLogin>} />
                 </Route>
 
                 {/* private routes */}
                 <Route element={<PrivateLayout />}>
-                    <Route path="/home" element={<Home>Home</Home>} />
+                    <Route path={ROUTES.ROOT} element={<Home>Home</Home>} />
                 </Route>
             </Routes>
         </Suspense>

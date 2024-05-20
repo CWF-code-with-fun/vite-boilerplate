@@ -1,34 +1,12 @@
+@import "keep-react/css";
+@import "tailwindcss/base";
 @import "./_fonts.scss";
-@import "./_mixins.scss";
-@import "./_constants.scss";
 @import "./_base.scss";
-@import "./_animation.scss";
+
+@import "tailwindcss/components";
 @import "../components/shared/**/*.scss";
 @import "../components/**/*.scss";
-
 @import "../pages/**/*.scss";
 
-@import "keep-react/css";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer base {
-    @font-face {
-        font-family: Bijoy;
-        src: url(/assets/fonts/NotoSerifBengali.ttf) format("truetype");
-    }
-
-    @font-face {
-        font-family: Roboto;
-        src: url(/assets/fonts/Roboto.ttf) format("truetype");
-    }
-}
-
-*[lang="en"] {
-    @apply font-['Roboto'];
-}
-
-*[lang="bn"] {
-    @apply font-['Bijoy'];
-}
+@import "tailwindcss/utilities";
+@import "./_mixins.scss";

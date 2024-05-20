@@ -1,43 +1,9 @@
-/* stylelint-disable */
 @font-face {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: bold;
-    src: url("../fonts/Inter-Bold.woff2") format("woff2");
+    font-family: Bijoy;
+    src: url(/assets/fonts/NotoSerifBengali.ttf) format("truetype");
 }
 
 @font-face {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: medium;
-    src: url("../fonts/Inter-Medium.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/Inter-Regular.woff2") format("woff2");
-}
-
-/* stylelint-enable */
-@font-face {
-    font-family: "Zen Kaku Gothic New";
-    font-style: normal;
-    font-weight: bold;
-    src: url("../fonts/ZenKakuGothicNew-Bold.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Zen Kaku Gothic New";
-    font-style: normal;
-    font-weight: medium;
-    src: url("../fonts/ZenKakuGothicNew-Medium.woff2") format("woff2");
-}
-
-@font-face {
-    font-family: "Zen Kaku Gothic New";
-    font-style: normal;
-    font-weight: normal;
-    src: url("../fonts/ZenKakuGothicNew-Regular.woff2") format("woff2");
+    font-family: Roboto;
+    src: url(/assets/fonts/Roboto.ttf) format("truetype");
 }

@@ -3,7 +3,7 @@ import useLocalization from "@/hooks/useLocalization";
 
 import { RootPath } from "./routes";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "@/app/store";
+import type { RootState } from "@/app/store";
 import { useEffect } from "react";
 import { setLanguage } from "@/features/language/languageSlice";
 import AddTodo from "@/components/AddTodo/AddTodo";

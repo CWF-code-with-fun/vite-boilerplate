@@ -12,7 +12,6 @@ const rootReducer = combineReducers({
     language: languageSliceReducer,
     todos: todosSliceReducer,
     user: userSliceReducer,
-    todos: todosSliceReducer,
 });
 
 export const store = configureStore({

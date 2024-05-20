@@ -9,7 +9,7 @@ import type { RootState } from "../app/store";
 function LanguageToggle() {
     const { i18n } = useTranslation();
     const dispatch = useDispatch();
-    const language = useSelector((state: RootState) => state.language.language);
+    const language = useSelector((state: RootState) => state.language.selected);
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);

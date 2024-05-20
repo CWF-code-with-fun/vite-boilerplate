@@ -7,6 +7,7 @@ export const authApi = apiSlice.injectEndpoints({
     endpoints: builder => ({
         login: builder.mutation({
             async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+                console.log(arg);
                 try {
                     const result = await queryFulfilled;
                     dispatch(
@@ -28,6 +29,7 @@ export const authApi = apiSlice.injectEndpoints({
         }),
         register: builder.mutation({
             async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+                console.log(arg);
                 try {
                     const result = await queryFulfilled;
                     dispatch(
