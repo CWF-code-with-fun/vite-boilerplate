@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet";
 import { RootPath } from "@/pages/routes";
 import AddTodo from "@/components/AddTodo/AddTodo";
 import Todos from "@/components/Todos";
-import useLanguage from "@/hooks/useLanguageToogle";
+import useLanguage from "@/hooks/useLanguage";
 
 function App() {
     const { language, switchToBangla, switchToEnglish, t } = useLanguage();
