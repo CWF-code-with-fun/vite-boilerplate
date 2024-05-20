@@ -10,5 +10,11 @@ export default {
                 sans: ["Roboto", "Bijoy", "Arial", "sans-serif"],
             },
         },
+        colors: {
+            transparent: "transparent",
+            current: "currentColor",
+            white: "#FF0000",
+            purple: "#3f3cbb",
+        },
     },
 };

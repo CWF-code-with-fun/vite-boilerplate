@@ -7,7 +7,9 @@ function Todos() {
     return (
         <ul>
             {todos.map(todo => (
-                <li key={todo.id}>{todo.text}</li>
+                <li className="text-white" key={todo.id}>
+                    {todo.text}
+                </li>
             ))}
         </ul>
     );
