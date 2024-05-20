@@ -3,5 +3,4 @@ export const SLICE_NAME = {
     REDUCER_PATH: "api",
     TO_DO: "todos",
     USER: "user",
-    TO_DO: "todos",
 };
