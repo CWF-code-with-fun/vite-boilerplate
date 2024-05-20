@@ -19,5 +19,5 @@
     "[scss]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
-    "cSpell.words": ["todos"]
+    "cSpell.words": ["Bangla", "todos"]
 }
