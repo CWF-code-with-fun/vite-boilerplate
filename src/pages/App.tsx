@@ -12,7 +12,7 @@ import Todos from "@/components/Todos";
 function App() {
     const { t, i18n } = useLocalization();
     const dispatch = useDispatch();
-    const language = useSelector((state: RootState) => state.language.language);
+    const language = useSelector<RootState, string>(state => state.language.selected);
 
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
