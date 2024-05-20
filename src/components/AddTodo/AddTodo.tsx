@@ -1,22 +1,24 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { useDispatch } from "react-redux";
+import { Button } from "keep-react";
+import { addTodo } from "@/features/todo/todoSlice";
+import { AppDispatch } from "@/app/store";
 
-import { addTodo } from "../../features/todo/todoSlice";
+export interface AddTodoProps {}
 
-type AddTodoProps = {
-    children: React.ReactNode;
-};
-function AddTodo({ children }: AddTodoProps) {
-    const dispatch = useDispatch();
-    const handleClick = () => {
-        dispatch(addTodo("drink water"));
-    };
+function AddTodo({ children }: PropsWithChildren<AddTodoProps>) {
+    const dispatch = useDispatch<AppDispatch>();
+
+    function handleClick() {
+        dispatch(addTodo("Learn React"));
+    }
+
     return (
         <div>
-            <button type="button" className="button" onClick={handleClick}>
-                add Todo
-            </button>
             {children}
+            <Button size="md" onClick={handleClick}>
+                Add Todo
+            </Button>
         </div>
     );
 }

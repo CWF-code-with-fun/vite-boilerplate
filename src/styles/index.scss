@@ -1,8 +1,3 @@
-// @import './datepicker.scss';
-// @import 'the-new-css-reset/css/reset.css';
-// @import 'tippy.js/dist/tippy.css';
-// @import 'tippy.js/animations/shift-away-subtle.css';
-// @import 'simplebar/dist/simplebar.min.css';
 @import "./_fonts.scss";
 @import "./_mixins.scss";
 @import "./_constants.scss";
@@ -11,7 +6,9 @@
 @import "../components/shared/**/*.scss";
 @import "../components/**/*.scss";
 
-// @import '../components/molecules/**/*.scss';
-// @import '../components/organisms/**/*.scss';
-// @import '../components/templates/**/*.scss';
 @import "../pages/**/*.scss";
+
+@import "keep-react/css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
