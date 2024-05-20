@@ -15,12 +15,9 @@ function App() {
     const language = useSelector((state: RootState) => state.language.language);
 
     useEffect(() => {
-        console.log("inside 1");
         const params = new URLSearchParams(window.location.search);
         const lang = params.get("lng");
-        console.log(lang);
         if (lang && lang !== language) {
-            console.log("dispatch called");
             dispatch(setLanguage(lang));
         }
     }, [language, dispatch]);
@@ -57,11 +54,12 @@ function App() {
                 <title>sample Title</title>
                 <meta name="description" content="sample component" />
             </Helmet>
-            <AddTodo>Add Todo</AddTodo>
+            <AddTodo>{t("todoPlaceholder")}</AddTodo>
             <Todos />
             <div>{t("learn")}</div>
-            <button onClick={switchToBanglaHandler}>Switch to Bangla</button>
-            <button onClick={switchToEnglishHandler}>Switch to English</button>
+            <button onClick={language === "en" ? switchToBanglaHandler : switchToEnglishHandler}>
+                {t("languageChange")}
+            </button>
             <RootPath />
         </div>
     );

@@ -1,3 +1,6 @@
 {
-    "learn": "Learn React"
+    "learn": "Learn React",
+    "languageChange": "Change Language to Bengali",
+    "addTodo": "Add Todo",
+    "todoPlaceholder": "Todo Section"
 }
