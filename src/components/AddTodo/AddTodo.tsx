@@ -1,8 +1,8 @@
-import React, { PropsWithChildren } from "react";
+import { type PropsWithChildren } from "react";
 import { useDispatch } from "react-redux";
 import { Button } from "keep-react";
 import { addTodo } from "@/features/todo/todoSlice";
-import { AppDispatch } from "@/app/store";
+import { type AppDispatch } from "@/app/store";
 
 export interface AddTodoProps {}
 

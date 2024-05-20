@@ -20,7 +20,7 @@ function LanguageToggle() {
     }, [language, dispatch]);
 
     useEffect(() => {
-        i18n.changeLanguage(language);
+        i18n.changeLanguage(language).catch(err => console.error(err));
     }, [language, i18n]);
 
     const handleToggle = () => {

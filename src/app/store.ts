@@ -10,8 +10,8 @@ const rootReducer = combineReducers({
     [apiSlice.reducerPath]: apiSlice.reducer,
     auth: authSliceReducer,
     language: languageSliceReducer,
-    user: userSliceReducer,
     todos: todosSliceReducer,
+    user: userSliceReducer,
 });
 
 export const store = configureStore({

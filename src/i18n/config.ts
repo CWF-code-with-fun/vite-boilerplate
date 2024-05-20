@@ -46,4 +46,5 @@ i18n.use(initReactI18next) // Integrates i18next with React
         resources,
 
         supportedLngs: ["en", "bn"],
-    });
+    })
+    .catch(err => console.error(err));
