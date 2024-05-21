@@ -1,0 +1,17 @@
+.c-auth-layout {
+    background-image: url("./../../../../public/assets/images/auth-layout-bg.png");
+
+    &::before {
+        background: linear-gradient(180deg, rgba(60, 80, 224, 0) 0%, rgba(60, 80, 224, 0.8) 70%, #3c50e0 100%);
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+}
+
+.c-auth-layout__wrapper {
+    width: 466px;
+}
