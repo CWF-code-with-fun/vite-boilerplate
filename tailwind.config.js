@@ -13,7 +13,7 @@ export default {
         colors: {
             transparent: "transparent",
             current: "currentColor",
-            white: "#FF0000",
+            white: "#fff",
             purple: "#3f3cbb",
         },
     },
