@@ -3,6 +3,7 @@ import AuthHeader from "@/components/auth-header";
 import { AuthLayout } from "@/components/layouts/authLayout";
 import { Button } from "keep-react";
 import { Link } from "react-router-dom";
+import useLanguage from "@/hooks/useLanguage";
 
 interface OtpProps {
     children?: React.ReactNode;
@@ -11,6 +12,7 @@ interface OtpProps {
 const Otp = ({ children }: OtpProps) => {
     const [otp, setOtp] = useState<string[]>(new Array(6).fill(""));
     const [countdown, setCountdown] = useState(30);
+    const { language, switchToBangla, switchToEnglish, t } = useLanguage();
 
     useEffect(() => {
         if (countdown > 0) {
@@ -41,10 +43,7 @@ const Otp = ({ children }: OtpProps) => {
 
     return (
         <AuthLayout>
-            <AuthHeader
-                title="OTP Verification"
-                description="Please enter the 6-digit One Time Verification code we sent to your email"
-            />
+            <AuthHeader title={t("otpPage.title")} description={t("otpPage.description")} />
             <div className="flex justify-center mt-6">
                 {otp.map((digit, index) => (
                     <input
@@ -59,12 +58,19 @@ const Otp = ({ children }: OtpProps) => {
                     />
                 ))}
             </div>
-            <p className="mt-6 text-center">Your code will expire in {countdown} seconds</p>
+            <p className="mt-6 text-center">
+                <span className="font-medium text-[#606977]">{t("otpPage.countDown1st")}</span>{" "}
+                <span className="font-bold text-[#3C50E0]">{countdown}</span>{" "}
+                <span className="font-bold text-[#3C50E0]">{t("otpPage.countDown2nd")}</span>
+            </p>
             <Button color="primary" className="w-full mt-6">
-                Verify
+                {t("otpPage.button")}
             </Button>
             <p className="mt-6 text-center">
-                Didn’t receive OTP? <Link to="#">Resend OTP</Link>
+                <span className="font-normal text-[#606977]">{t("otpPage.resend1st")}</span>
+                <Link to="#" className="font-medium text-[#3D434C]">
+                    {t("otpPage.resend2nd")}
+                </Link>
             </p>
         </AuthLayout>
     );

@@ -2,5 +2,15 @@
     "learn": "Learn React",
     "languageChange": "Change Language to Bengali",
     "addTodo": "Add Todo",
-    "todoPlaceholder": "Todo Section"
+    "todoPlaceholder": "Todo Section",
+
+    "otpPage": {
+        "title": "OTP Verification",
+        "description": "Please enter the 6-digit One Time Verification code we sent at your email",
+        "countDown1st": "Your code will expire in",
+        "countDown2nd": "s",
+        "button": "Verify",
+        "resend1st": "Didn’t receive OTP?",
+        "resend2nd": "Resend OTP"
+    }
 }
