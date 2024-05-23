@@ -1,0 +1,42 @@
+.c-toggleOptions {
+    max-width: 402px;
+    padding: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 10px;
+
+    border-radius: 62px;
+    background: #f9f9f9;
+
+    transition: all 0.3s ease-in-out;
+
+    &__email,
+    &__phone {
+        min-width: 188px;
+        padding: 11px 22px;
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+        cursor: pointer;
+        cursor: pointer;
+    }
+
+    &__active {
+        border-radius: 30px;
+        background: #fff;
+
+        /* Drop Shadow */
+        box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12);
+    }
+
+    &__text {
+        color: #4f5662;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: normal;
+        letter-spacing: -0.3px;
+    }
+}

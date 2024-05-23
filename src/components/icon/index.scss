@@ -1,0 +1,28 @@
+.c-icon {
+    $root: &;
+
+    position: relative;
+    display: inline-block;
+
+    &__icon {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+
+        #{$root}--email & {
+            background-image: url("../../assets/icons/svg/email.svg");
+        }
+
+        #{$root}--phone & {
+            background-image: url("../../assets/icons/svg/phone.svg");
+        }
+
+        #{$root}--cwasa-logo & {
+            width: 180px;
+            height: 70px;
+            background-image: url("../../assets/icons/svg/cwasa-logo.svg");
+        }
+    }
+}

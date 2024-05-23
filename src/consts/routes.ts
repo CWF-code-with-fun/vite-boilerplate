@@ -43,4 +43,5 @@ export const ROUTES = {
     SIGNUP_COMPLETED: "/signup-completed",
     SIGNUP_PROVISIONAL: "/signup-provisional",
     USAGE: "/usage",
+    OTP: "/otp",
 } as const;

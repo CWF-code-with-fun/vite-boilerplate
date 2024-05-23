@@ -8,6 +8,7 @@ import { ROUTES } from "../consts/routes";
 
 const Home = lazy(() => import("@/pages/home"));
 const PageLogin = lazy(() => import("@/pages/login"));
+const Otp = lazy(() => import("@/pages/otp"));
 
 function PublicLayout() {
     return <Outlet />;
@@ -43,6 +44,7 @@ export function RootPath() {
                 {/* public only routes */}
                 <Route element={<PublicOnlyLayout />}>
                     <Route path={ROUTES.LOGIN} element={<PageLogin>Login Page</PageLogin>} />
+                    <Route path={ROUTES.OTP} element={<Otp>Otp Page</Otp>} />
                 </Route>
 
                 {/* private routes */}
